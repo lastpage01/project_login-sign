@@ -95,6 +95,9 @@ hr {
 .demo{
   color: red;
 }
+.request{
+  color: rgb(113, 113, 255);
+}
 @media screen and (max-width: 800px){
   .sign-modal-content{
     width: 65%; 

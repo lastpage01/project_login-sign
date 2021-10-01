@@ -1,6 +1,7 @@
 let sign = document.querySelectorAll(".input_sign");
 let btnSign = document.querySelector(".signupbtn");
 let demo = document.querySelectorAll(".demo");
+let request = document.querySelectorAll(".request");
 let name,phone,user,psw,re_psw,checkbox;
 
 let login_user = document.getElementById("login_user");
@@ -39,20 +40,25 @@ const handleResponse = (response) => {
         for(let i = 0; i < response.length;i++){
             let re_phone = '0'+response[i].Phone;
             if(phone == re_phone){
-                demo[1].innerText="Phone number already in use";
+                demo[1].innerText="Số điện thoại đã được sử dụng";
+                request[1].innerText=""
+
             }
             else{
                 demo[1].innerText="";
+                request[1].innerText="Số điện thoại chỉ chứa 10 kí tự và 2 kí tự đầu là 09|03|07|08|05 ";
             }
             if( user == response[i].User){
-                demo[2].innerText="Username already in use";
+                demo[2].innerText="Tên tài khoản đã được sử dụng";
+                request[2].innerText=""
             }
             else{
                 demo[2].innerText="";
+                request[2].innerText="Tài khoản phải lớn hơn hoặc bằng 6 kì tự và không chứa khoảng trắng"
             }    
         }
-        if(re_psw != psw){
-            demo[4].innerText = "Invalid repeat password";
+        if(re_psw.length>0&&re_psw != psw){
+            demo[4].innerText = "Mật khẩu không trùng khớp";
         }
         else {
             demo[4].innerText = "";

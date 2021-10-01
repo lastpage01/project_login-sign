@@ -3,8 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/project_nhom_1/css/login.css">
-<link rel="stylesheet" href="/project_nhom_1/css/sign.css">
+<link rel="stylesheet" href="/sign_login/css/login.css">
+<link rel="stylesheet" href="/sign_login/css/sign.css">
 
 </head>
 <body>
@@ -66,20 +66,27 @@
           <hr>
 
           <label for="name"><b>Name</b></label>
-          <input class="input_sign" type="text" placeholder="Enter Name" name="name" pattern="[A-Za-z\ ]*" required>
-          <span class="demo"></span><br><br>
+          <input class="input_sign" type="text" placeholder="Enter Name" name="name" pattern="[A-Za-z\ ]+" required>
+          <span class="demo"></span>
+          <span class="request">Tên chỉ chứa kí tự A->Z hoặc a->z</span><br><br>
 
           <label for="phone"><b>Phone number</b></label>
-          <input class="input_sign" type="text" placeholder="Enter Phone" name="Phone" pattern="[0-9]{10,}" required>
-          <span class="demo"></span><br><br> 
+          <input class="input_sign" type="text" placeholder="Enter Phone" name="Phone" pattern="((09|03|07|08|05)+([0-9]{8}))" required>
+          <span class="demo"></span>
+          <span class="request">Số điện thoại chỉ chứa 10 kí tự và 2 kí tự đầu là 09|03|07|08|05 </span>
+          <br><br> 
 
           <label for="username"><b>Username</b></label>
-          <input class="input_sign" type="text" placeholder="Enter Username" name="username"  pattern=".{6,}" required>
-          <span class="demo"></span><br><br>  
+          <input class="input_sign" type="text" placeholder="Enter Username" name="username"  pattern="[^ ]{6,}" required>
+          <span class="demo"></span>  
+          <span class="request">Tài khoản phải lớn hơn hoặc bằng 6 kì tự và không chứa khoảng trắng</span>
+          <br><br>
 
           <label for="psw"><b>Password</b></label>
-          <input class="input_sign" type="password" placeholder="Enter Password" name="psw" pattern=".{6,}" required>
-          <span class="demo"></span><br><br>  
+          <input class="input_sign" type="password" placeholder="Enter Password" name="psw" pattern="[^ ]{6,}" required>
+          <span class="demo"></span>
+          <span class="request">Mật khẩu phải lớn hơn hoặc bằng 6 kì tự và không chứa khoảng trắng</span>
+          <br><br>  
 
           <label for="psw-repeat"><b>Repeat Password</b></label>
           <input class="input_sign" type="password" placeholder="Repeat Password" name="psw-repeat" required>
@@ -97,7 +104,7 @@
       </form>
     </div>
 </div>
-<script src="/project_nhom_1/js/login_sign.js"></script>
+<script src="/sign_login/js/login_sign.js"></script>
 
 </body>
 </html>
